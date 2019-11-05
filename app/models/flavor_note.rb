@@ -1,0 +1,2 @@
+class FlavorNote < ApplicationRecord
+end
