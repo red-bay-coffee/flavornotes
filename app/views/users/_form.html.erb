@@ -11,17 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.email_field :email, id: :email %>
+    <%= form.email_field :email, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit :class => 'btn' %>
+  <div class="form-group">
+    <%= label_tag 'Choose your favorite flavor note' %>
+    <%= select_tag 'flavor_note', options_from_collection_for_select(FlavorNote.all.order(:name), :id, :name), class: 'form-control' %>
   </div>
+
+  <%= form.submit 'Flavor Note Me', class: 'btn btn-primary' %>
 <% end %>
