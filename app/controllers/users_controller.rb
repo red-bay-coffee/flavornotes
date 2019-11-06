@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  protect_from_forgery prepend: true
   # GET /users/new
   def new
     @user = User.new
