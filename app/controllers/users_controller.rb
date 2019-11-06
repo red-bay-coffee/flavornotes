@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   # GET /users/new
   def new
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { render "/users/new" }
+        format.html { render '/users/new' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

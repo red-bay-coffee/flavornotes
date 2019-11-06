@@ -1,18 +1,39 @@
 import React from "react";
 
-const Flavors = ({ flavors: flavorList }) => {
+const FlavorsForm = ({
+  flavors: flavorList,
+  setFavoriteFlavor,
+  onSubmit: propOnSubmit
+}) => {
+  const onSubmit = e => {
+    e.preventDefault();
+    propOnSubmit && propOnSubmit();
+  };
+
   return (
-    <div className="form-group">
-      <label>Choose one of your favorite flavors:</label>
-      <select name="flavor_note" id="flavor_note" className="form-control">
-        {flavorList.map(([id, name]) => (
-          <option key={`flavor-${id}`} value={id}>
-            {name}
+    <form id="flavor_form" onSubmit={onSubmit}>
+      <div className="form-group">
+        <label>Choose one of your favorite flavors:</label>
+        <select
+          name="flavor_note"
+          id="flavor_note"
+          onChange={e => setFavoriteFlavor(e.target.value)}
+          className="form-control"
+          required
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select your flavor
           </option>
-        ))}
-      </select>
-    </div>
+          {flavorList.map(([id, name]) => (
+            <option key={`flavor-${id}`} value={id}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
+    </form>
   );
 };
 
-export default Flavors;
+export default FlavorsForm;

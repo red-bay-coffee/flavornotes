@@ -1,34 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-import Flavors from "./screens/Flavors";
+import FlavorsForm from "./screens/Flavors";
+import UserRegistrationForm from "./screens/UserRegistrationForm";
 
-const FormButton = ({ step, onClick }) => {
-  let label;
-  switch (step) {
-    case 0:
-      label = "Next";
-      break;
-
-    default:
-      label = "Send me beautiful coffee";
-      break;
-  }
-
-  return (
+const FormButton = ({ step }) =>
+  step === 0 ? (
     <input
       name="commit"
-      value={label}
+      value="Next"
       type="submit"
       className="btn btn-primary justify-content-md-center"
-      data-disable-with="Next"
-      onClick={onClick}
+      form="flavor_form"
+    />
+  ) : (
+    <input
+      name="commit"
+      value="Send me beautiful coffee"
+      type="submit"
+      className="btn btn-primary justify-content-md-center"
+      form="new_user"
     />
   );
-};
 
 const Home = ({ flavors }) => {
   const [step, setStep] = useState(0);
-
   const [favoriteFlavor, setFavoriteFlavor] = useState(null);
 
   const nextStep = () => setStep(step + 1);
@@ -40,12 +35,16 @@ const Home = ({ flavors }) => {
           <div className="card-body">
             <h1 className="card-title">Header</h1>
             {step === 0 && (
-              <Flavors
+              <FlavorsForm
                 flavors={flavors}
                 setFavoriteFlavor={setFavoriteFlavor}
+                onSubmit={nextStep}
               />
             )}
-            <FormButton step={step} onClick={nextStep} />
+            {step === 1 && (
+              <UserRegistrationForm favoriteFlavor={favoriteFlavor} />
+            )}
+            <FormButton step={step} setStep={setStep} />
           </div>
         </div>
       </div>
