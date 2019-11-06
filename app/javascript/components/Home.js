@@ -1,18 +1,19 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import Flavors from "./screens/Flavors";
 
-class Home extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Greeting: {this.props.greeting}
-      </React.Fragment>
-    );
-  }
-}
-
-Home.propTypes = {
-  greeting: PropTypes.string
+const Home = ({ flavors }) => {
+  return (
+    <React.Fragment>
+      <div className="row justify-content-md-center">
+        <div className="card">
+          <div className="card-body">
+            <h1 className="card-title">Header</h1>
+            <Flavors flavors={flavors} />
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
 };
 
-export default Home
+export default Home;
