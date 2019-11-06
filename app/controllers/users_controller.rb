@@ -1,4 +1,12 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
+  # GET /users/1
+  # GET /users/1.json
+  def show
+    @user = User.find(params[:id])
+  end
+
   # GET /users/new
   def new
     @user = User.new
@@ -12,7 +20,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { render "/users/new" }
+        format.html { render '/users/new' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
