@@ -12,8 +12,13 @@ const FlavorsForm = ({
 
   return (
     <form id="flavor_form" onSubmit={onSubmit}>
+      <div style={{ maxWidth: 450, marginBottom: 10 }}>
+        <p>
+          Whether you’re new to this or true to this, flavor is everything. Tell
+          us what flavor you like and enjoy a bag of Red Bay Coffee on us.
+        </p>
+      </div>
       <div className="form-group">
-        <label>Choose one of your favorite flavors:</label>
         <select
           name="flavor_note"
           id="flavor_note"
@@ -23,7 +28,7 @@ const FlavorsForm = ({
           defaultValue=""
         >
           <option value="" disabled>
-            Select your flavor
+            Choose a favorite flavor
           </option>
           {flavorList.map(([id, name]) => (
             <option key={`flavor-${id}`} value={id}>
