@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   post '/users', to: 'users#create'
-  get '/noted/:access_token', to: 'users#show'
+  get '/people/:access_token', to: 'users#show'
 end

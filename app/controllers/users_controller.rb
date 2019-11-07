@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to "/noted/#{@user.access_token}" }
+        format.html { redirect_to "/people/#{@user.access_token}" }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
