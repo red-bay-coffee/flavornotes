@@ -71,3 +71,4 @@ coffee_mapping.each do |coffee_name, coffee_data|
   coffee.update(flavor_notes: flavor_notes, image_url: coffee_data[:image_url])
   coffee.update(web_link: coffee_data[:web_link], discount_link: coffee_data[:discount_link])
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
