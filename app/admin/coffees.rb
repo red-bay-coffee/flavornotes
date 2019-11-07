@@ -16,6 +16,18 @@ ActiveAdmin.register Coffee do
   #   permitted
   # end
 
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :image_url
+    column :discount_link
+    column :web_link
+    column :origin
+    column :description
+    actions
+  end
+
   form do |f|
     f.inputs do
       f.input :name
