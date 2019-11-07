@@ -8,6 +8,14 @@
         <h3>We recommend <%= @coffee.name %></h3>
         <%= image_tag(@coffee.image_url, class: 'img-fluid w-50') %>
       </p>
+
+      <p class="card-text">
+        <a href="<%= @coffee.web_link %>">Information</a>
+      </p>
+
+      <p class="card-text">
+        <a href="<%= @coffee.discount_link %>">Discount Link</a>
+      </p>
     </div>
   </div>
 </div>
