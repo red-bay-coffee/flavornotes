@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user }
+        format.html { redirect_to "/noted/#{@user.access_token}" }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
+    @user = User.find_by(access_token: params[:access_token])
     @coffee = Coffee.find_by_flavor_note(@user.flavor_notes.first)
   end
 
