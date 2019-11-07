@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    # just update the flavor notes if we already know about this user
+    @user = User.find_by_email(user_params[:email]) || User.new(user_params)
     @user.flavor_notes = [FlavorNote.find(params[:flavor_note])]
 
     respond_to do |format|
