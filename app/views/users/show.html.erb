@@ -1,20 +1,15 @@
-<div class="row justify-content-md-center">
-  <div class="card">
-    <div class="card-body">
+<div class="row justify-content-md-center v-centered-content main-content">
+  <h3>We recommend <%= @coffee.name %>!</h3>
 
-      <p class="card-text">
-        <h2><%= @user.name %>,</h2>
-        <h3>We recommend <%= @coffee.name %></h3>
-        <%= image_tag(@coffee.image_url, class: 'img-fluid w-50') %>
-      </p>
+  <p class="card-text">
+    <%= image_tag(@coffee.image_url, class: 'coffee-picture') %>
+  </p>
 
-      <p class="card-text">
-        <a href="<%= @coffee.web_link %>">Information</a>
-      </p>
+  <p class="card-text">
+    <a href="<%= @coffee.web_link %>">Learn more about <%= @coffee.name %> here</a>
+  </p>
 
-      <p class="card-text">
-        <a href="<%= @coffee.discount_link %>">Discount Link</a>
-      </p>
-    </div>
-  </div>
+  <p class="card-text">
+    <a href="<%= @coffee.discount_link %>">Get 1 free bag of <%= @coffee.name %> on us</a>
+  </p>
 </div>
