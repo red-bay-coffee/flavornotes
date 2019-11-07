@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
+  const csrfToken = $('meta[name="csrf-token"]').attr('content');
+
   return (
     <React.Fragment>
       <p>Great! Please tell us where to send your free coffee</p>
@@ -12,6 +14,8 @@ const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
         method="post"
         ref={formRef}
       >
+        <input type="hidden" name="authenticity_token" value={csrfToken} readOnly={true} />
+        <input type="hidden" name="flavor_note" value={favoriteFlavor} readOnly={true} />
         <div className="form-group">
           <label>Name</label>
           <input
@@ -32,13 +36,6 @@ const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
             required
           />
         </div>
-        <input
-          className="form-control"
-          type="hidden"
-          id="flavor_id"
-          name="flavor_note"
-          value={favoriteFlavor}
-        />
         <input
           name="commit"
           value="Send me beautiful coffee"
