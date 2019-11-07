@@ -3,25 +3,6 @@ import React, { useState, useRef } from "react";
 import FlavorsForm from "./screens/Flavors";
 import UserRegistrationForm from "./screens/UserRegistrationForm";
 
-const FormButton = ({ step }) =>
-  step === 0 ? (
-    <input
-      name="commit"
-      value="Next"
-      type="submit"
-      className="btn btn-primary justify-content-md-center"
-      form="flavor_form"
-    />
-  ) : (
-    <input
-      name="commit"
-      value="Send me beautiful coffee"
-      type="submit"
-      className="btn btn-primary justify-content-md-center"
-      form="new_user"
-    />
-  );
-
 const Home = ({ flavors }) => {
   const [step, setStep] = useState(0);
   const [favoriteFlavor, setFavoriteFlavor] = useState(null);
@@ -44,7 +25,6 @@ const Home = ({ flavors }) => {
             {step === 1 && (
               <UserRegistrationForm favoriteFlavor={favoriteFlavor} />
             )}
-            <FormButton step={step} setStep={setStep} />
           </div>
         </div>
       </div>

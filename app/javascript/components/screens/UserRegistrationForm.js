@@ -39,6 +39,13 @@ const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
           name="flavor_note"
           value={favoriteFlavor}
         />
+        <input
+          name="commit"
+          value="Send me beautiful coffee"
+          type="submit"
+          className="btn btn-primary justify-content-md-center"
+          form="new_user"
+        />
       </form>
     </React.Fragment>
   );

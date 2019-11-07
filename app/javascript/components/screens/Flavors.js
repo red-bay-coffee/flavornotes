@@ -32,6 +32,13 @@ const FlavorsForm = ({
           ))}
         </select>
       </div>
+      <input
+        name="commit"
+        value="Next"
+        type="submit"
+        className="btn btn-primary justify-content-md-center"
+        form="flavor_form"
+      />
     </form>
   );
 };
