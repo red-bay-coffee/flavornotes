@@ -10,18 +10,24 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    # just update the flavor notes if we already know about this user
+    @user = User.find_by_email(user_params[:email]) || User.new(user_params)
     @user.flavor_notes = [FlavorNote.find(params[:flavor_note])]
 
     respond_to do |format|
       if @user.save
-        format.html { render '/users/new' }
+        format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @user = User.find params[:id]
+    @coffee = Coffee.find_by_flavor_note(@user.flavor_notes.first)
   end
 
   private
