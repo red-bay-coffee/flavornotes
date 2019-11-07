@@ -11,7 +11,7 @@ const Home = ({ flavors }) => {
 
   return (
     <React.Fragment>
-      <div className="row justify-content-md-center">
+      <div className="main-content row justify-content-md-center">
         <div className="card">
           <div className="card-body">
             {step === 0 && (

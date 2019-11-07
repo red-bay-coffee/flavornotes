@@ -11,14 +11,14 @@ const FlavorsForm = ({
   };
 
   return (
-    <form id="flavor_form" onSubmit={onSubmit}>
+    <form className="v-centered-content" id="flavor_form" onSubmit={onSubmit}>
       <div style={{ maxWidth: 450, marginBottom: 10 }}>
         <p>
           Whether you’re new to this or true to this, flavor is everything. Tell
           us what flavor you like and enjoy a bag of Red Bay Coffee on us.
         </p>
       </div>
-      <div className="form-group">
+      <div className="form-group full-width">
         <select
           name="flavor_note"
           id="flavor_note"

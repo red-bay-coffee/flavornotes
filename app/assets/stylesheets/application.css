@@ -14,28 +14,35 @@
  *= require_self
  */
 
- .header_icon {
-   padding: 10px;
+html,
+body {
+  height: 100%;
+}
 
- }
+.header_icon {
+  padding: 10px;
+}
 
- .footer_icon {
-   padding: 10px;
+.footer_icon {
+  padding: 10px;
+}
 
- }
+.btn-primary {
+  color: #fff;
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+}
 
- .btn-primary {
-     color: #fff;
-     background-color: #212529 !important;
-     border-color: #212529 !important;
- }
+.coffee-picture {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  width: auto;
+}
 
- .coffee-picture {
-   max-width: 100%;
-   max-height: 600px;
-   height: auto;
-   width: auto;
- }
+.full-width {
+  width: 100% !important;
+}
 
 .v-centered-content {
   display: flex;
@@ -45,4 +52,18 @@
 
 .main-content {
   margin: 20px 0;
+  padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .header-image {
+    max-height: 160px;
+    width: auto;
+  }
+}
+
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
