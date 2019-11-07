@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 ActiveAdmin.setup do |config|
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Flavornotes"
+  config.site_title = 'Flavornotes'
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -24,7 +26,7 @@ ActiveAdmin.setup do |config|
   # will be added to.
   #
   # eg:
-  #   config.default_namespace = :hello_world
+  config.default_namespace = :rbpupdsgsk
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
@@ -157,7 +159,7 @@ ActiveAdmin.setup do |config|
   # You can exclude possibly sensitive model attributes from being displayed,
   # added to forms, or exported by default by ActiveAdmin
   #
-  config.filter_attributes = [:encrypted_password, :password, :password_confirmation]
+  config.filter_attributes = %i[encrypted_password password password_confirmation]
 
   # == Localize Date/Time Format
   #
