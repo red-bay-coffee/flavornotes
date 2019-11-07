@@ -26,5 +26,5 @@
     <%= select_tag 'flavor_note', options_from_collection_for_select(FlavorNote.all.order(:name), :id, :name), class: 'form-control' %>
   </div>
 
-  <%= form.submit 'Flavor Note Me', class: 'btn btn-primary' %>
+  <%= form.submit 'Flavor Note Me', class: 'btn btn-primary mb1 bg-black' %>
 <% end %>

@@ -36,7 +36,7 @@ const FlavorsForm = ({
         name="commit"
         value="Next"
         type="submit"
-        className="btn btn-primary justify-content-md-center"
+        className="btn btn-primary mb1 bg-black justify-content-md-center"
         form="flavor_form"
       />
     </form>

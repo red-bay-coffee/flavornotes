@@ -40,7 +40,7 @@ const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
           name="commit"
           value="Send me beautiful coffee"
           type="submit"
-          className="btn btn-primary justify-content-md-center"
+          className="btn btn-primary mb1 bg-black justify-content-md-center"
           form="new_user"
         />
       </form>
