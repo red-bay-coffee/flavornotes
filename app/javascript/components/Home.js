@@ -14,7 +14,6 @@ const Home = ({ flavors }) => {
       <div className="row justify-content-md-center">
         <div className="card">
           <div className="card-body">
-            <h1 className="card-title">Header</h1>
             {step === 0 && (
               <FlavorsForm
                 flavors={flavors}
