@@ -38,9 +38,9 @@ const FlavorsForm = ({
       </div>
       <input
         name="commit"
-        value="Next"
+        value="Get my Note"
         type="submit"
-        className="btn btn-outline-warning"
+        className="dope_button"
         form="flavor_form"
       />
     </form>
