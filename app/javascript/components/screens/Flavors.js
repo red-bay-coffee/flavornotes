@@ -13,7 +13,7 @@ const FlavorsForm = ({
   return (
     <form className="v-centered-content" id="flavor_form" onSubmit={onSubmit}>
       <div style={{ maxWidth: 410, marginBottom: 10 }}>
-        <p>
+        <p className="card_font">
           Flavor is everything. Pick a flavor and get a bag of Red Bay Coffee.
         </p>
       </div>

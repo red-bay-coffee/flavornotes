@@ -14,11 +14,22 @@
  *= require_self
  */
 
+ /* @font-face {
+  font-family: 'Bebas-Regular', sans-serif;
+  src: url(./fonts/Bebas-Regular.otf);
+} */
+
 html,
 body {
   background-image: url("beans.jpg");
+  background-attachment: fixed;
   background-size: contain;
   height: 100%;
+}
+
+.card_font {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
 }
 
 
