@@ -5,7 +5,7 @@ const UserRegistrationForm = ({ favoriteFlavor, formRef }) => {
 
   return (
     <React.Fragment>
-      <p>Great! Please tell us where to send your free coffee</p>
+      <p className="card_font">Dope. Where are we sending your free coffee?</p>
 
       <form
         className="v-centered-content"

@@ -14,13 +14,37 @@
  *= require_self
  */
 
+ /* @font-face {
+  font-family: 'Bebas-Regular', sans-serif;
+  src: url(./fonts/Bebas-Regular.otf);
+} */
+
 html,
 body {
+  background-image: url("beans.jpg");
+  background-attachment: fixed;
+  background-size: contain;
   height: 100%;
 }
 
+.card_font {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+}
+
+input {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
 .header_icon {
-  padding: 10px;
+  padding-top: 50px;
 }
 
 .footer_icon {
@@ -51,8 +75,11 @@ body {
 }
 
 .main-content {
-  margin: 20px 0;
-  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0 1rem 2rem;
 }
 
 @media only screen and (max-width: 500px) {

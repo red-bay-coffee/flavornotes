@@ -12,10 +12,9 @@ const FlavorsForm = ({
 
   return (
     <form className="v-centered-content" id="flavor_form" onSubmit={onSubmit}>
-      <div style={{ maxWidth: 450, marginBottom: 10 }}>
-        <p>
-          Whether you’re new to this or true to this, flavor is everything. Tell
-          us what flavor you like and enjoy a bag of Red Bay Coffee on us.
+      <div style={{ maxWidth: 410, marginBottom: 10 }}>
+        <p className="card_font">
+          Flavor is everything. Pick a flavor and get a bag of Red Bay Coffee.
         </p>
       </div>
       <div className="form-group full-width">
@@ -28,7 +27,7 @@ const FlavorsForm = ({
           defaultValue=""
         >
           <option value="" disabled>
-            Choose a favorite flavor
+            What's your flavor?
           </option>
           {flavorList.map(([id, name]) => (
             <option key={`flavor-${id}`} value={id}>
@@ -39,9 +38,9 @@ const FlavorsForm = ({
       </div>
       <input
         name="commit"
-        value="Next"
+        value="Get my Note"
         type="submit"
-        className="btn btn-primary mb1 bg-black justify-content-md-center"
+        className="dope_button"
         form="flavor_form"
       />
     </form>
