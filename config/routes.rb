@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root 'home#index'
   post '/users', to: 'users#create'
   get '/people/:access_token', to: 'users#show'
+  get '/flavor_note_me/:access_token', to: 'flavor_note_bags#show', as: 'flavor_note_me'
 end

@@ -1,0 +1,19 @@
+<div class="inner cover row justify-content-md-center v-centered-content main-content" role="main">
+  <h3 class="card_font" style="padding: 20px; color: white;">Based on your note, we recommend <%= @coffee.name %>!</h3>
+
+  <p class="card_font">
+    <% if @flavor_note_bag.bag_photo.present? %>
+      <%= image_tag(@flavor_note_bag.bag_photo, class: 'coffee-picture') %>
+    <% else %>
+      <%= image_tag(@coffee.image_url, class: 'coffee-picture') %>
+    <% end %>
+  </p>
+
+  <p class="card_font" style="padding: 20px; color: white;">
+    <a href="<%= @coffee.web_link %>">Learn more about <%= @coffee.name %> here</a>
+  </p>
+
+  <p class="card_font" style="padding: 20px; color: white;">
+    <a href="<%= @coffee.discount_link %>">Get 1 free bag of <%= @coffee.name %> on us</a>
+  </p>
+</div>
